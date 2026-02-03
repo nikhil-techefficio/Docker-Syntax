@@ -197,3 +197,42 @@ docker push nikhilsingh45/angular-app:1.0.1
 Mental model (lock this)
 Source code ──► Build (Node) ──► Static files ──► Serve (Nginx)
 
+so now we created two stages in Docker file :
+  Stage 1 → Node exists
+
+  Stage 2 → Node is gone
+
+  Final image = only Nginx + static files
+
+# Create Docker for production
+  
+   docker build -t react-app:prod .
+ 
+That final dot (.) means:
+
+“Use the current directory as the build context”
+# To check it is pushed and working 
+  docker images | findstr react-app
+# Run
+docker run -p 8080:80 react-app:prod
+
+
+This is the process:
+
+ # C:\Users\amit\Documents\GitHub\Docker-Syntax\Docker\react-app>docker ps
+CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS          PORTS                                     NAMES
+9596a5c66f07   react-app:prod   "/docker-entrypoint.…"   35 seconds ago   Up 35 seconds   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   ecstatic_meninsky
+
+
+# C:\Users\amit\Documents\GitHub\Docker-Syntax\Docker\react-app>docker exec -it 9596a5c66f07 sh
+/ # nginx -v
+nginx version: nginx/1.29.4
+/ # node -v
+sh: node: not found
+/ # exit
+
+docker ps --> to know the container ID
+docker exec -it 9596a5c66f07 sh --> to enter into container 
+nginx -v --> will show the nginx vershion 
+node -v --> now it should see not found 
+exit --> exit the shell 
