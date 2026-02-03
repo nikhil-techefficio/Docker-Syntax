@@ -236,3 +236,37 @@ docker exec -it 9596a5c66f07 sh --> to enter into container
 nginx -v --> will show the nginx vershion 
 node -v --> now it should see not found 
 exit --> exit the shell 
+
+
+# Over view what does Docker do and care of 
+
+  Dockerfile + source code
+        ↓
+   docker build
+        ↓
+   Image (snapshot)
+        ↓
+   docker push
+        ↓
+   Docker Hub
+
+
+
+docker tag nikhilsingh45/react-app:2.0 nikhilsingh45/react-app:2.1
+
+ docker tag nikhilsingh45/react-app:2.0 nikhilsingh45/react-app:2.1 
+
+ check uplode history 
+ docker history nikhilsingh45/react-app:1.1
+
+ 
+   docker images | findstr react-app
+
+ C:\Users\amit\Documents\GitHub\Docker-Syntax\Docker\react-app>docker images | findstr react-app
+nikhilsingh45/react-app     2.1              00106a033e79   11 minutes ago      92.5MB
+react-app                   prod             33ea42d54133   About an hour ago   92.5MB
+react-app                   1.0              cca7bd6c6e5f   24 hours ago        516MB
+nikhilsingh45/react-app     1.0              cca7bd6c6e5f   24 hours ago        516MB
+nikhilsingh45/react-app     2.0              cca7bd6c6e5f   24 hours ago        516MB
+
+C:\Users\amit\Documents\GitHub\Docker-Syntax\Docker\react-app>docker run -p 8080:80 nikhilsingh45/react-app:2.1  

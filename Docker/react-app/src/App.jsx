@@ -11,7 +11,8 @@ function App() {
       </div>
       
       <h1>Hello React from Docker (soon)</h1>
-       <h1>Vershion 2.0</h1>
+       <h1>Vershion 2.1</h1>
+       <h1>Change and push</h1>
       <div className="card">
        
        
