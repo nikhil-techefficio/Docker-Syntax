@@ -270,3 +270,23 @@ nikhilsingh45/react-app     1.0              cca7bd6c6e5f   24 hours ago        
 nikhilsingh45/react-app     2.0              cca7bd6c6e5f   24 hours ago        516MB
 
 C:\Users\amit\Documents\GitHub\Docker-Syntax\Docker\react-app>docker run -p 8080:80 nikhilsingh45/react-app:2.1  
+
+## Key take aways 
+
+ | Statement                    | Correct?              |
+| ---------------------------- | --------------------- |
+| Pulled image is not editable | ✅ Yes                 |
+| User cannot push changes     | ✅ Yes                 |
+| Prod image hides source      | ✅ Yes (compiled only) |
+| Dev image hides source       | ❌ No                  |
+| Private Git repo exposed     | ❌ No                  |
+| Docker image = package       | ✅ Good analogy        |
+
+
+
+docker info
+
+Entering in to container 
+
+docker exec -it 7c65c8fa6251 sh
+ls
