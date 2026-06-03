@@ -290,3 +290,34 @@ Entering in to container
 
 docker exec -it 7c65c8fa6251 sh
 ls
+
+
+# A mental map of hosting Paraller Containers 
+
+                  ┌──────────────────────────┐
+                  │        Docker Host        │
+                  │                            │
+                  │   ┌────────────────────┐  │
+ Internet 🌍 ───▶  │   │   Docker Network   │  │
+                  │   │  (bridge / custom) │  │
+                  │   │                    │  │
+                  │   │  ┌──────────────┐  │  │
+                  │   │  │  Frontend    │  │  │
+                  │   │  │  Container   │  │  │
+                  │   │  │  (React)     │  │  │
+                  │   │  └──────┬───────┘  │  │
+                  │   │         │ HTTP     │  │
+                  │   │  ┌──────▼───────┐  │  │
+                  │   │  │  Backend     │  │  │
+                  │   │  │  Container   │  │  │
+                  │   │  │  (API)       │  │  │
+                  │   │  └──────┬───────┘  │  │
+                  │   │         │ SQL      │  │
+                  │   │  ┌──────▼───────┐  │  │
+                  │   │  │  Database    │  │  │
+                  │   │  │  Container   │  │  │
+                  │   │  │  (Postgres)  │  │  │
+                  │   │  └──────────────┘  │  │
+                  │   └────────────────────┘  │
+                  │                            │
+                  └──────────────────────────┘
