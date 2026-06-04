@@ -188,3 +188,24 @@ Probes → health checks.
 Scheduler → places pods on nodes.
 Self-healing → replaces failed pods automatically.
 Scaling → increases/decreases pod count on demand.
+
+
+
+Cluster
+ └── Node 1
+      ├── Frontend Pod
+      ├── Frontend Pod
+      ├── Backend Pod
+      └── Backend Pod
+
+
+
+Cluster
+│
+├── Node 1
+│    ├── Frontend Pod
+│    └── Backend Pod
+│
+└── Node 2
+     ├── Frontend Pod
+     └── Backend Pod
