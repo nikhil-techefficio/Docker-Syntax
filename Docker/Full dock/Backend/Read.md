@@ -209,3 +209,13 @@ Cluster
 └── Node 2
      ├── Frontend Pod
      └── Backend Pod
+
+
+     This is the exact workflow used in production, except that in AWS the images usually live in Amazon Web Services ECR and Kubernetes runs on Amazon EKS instead of Minikube.
+
+
+     Horizontal Scaling > 
+       Give more podes 
+     
+     
+     Vertical Scaling >  Give more Resources more CPU and RAM
